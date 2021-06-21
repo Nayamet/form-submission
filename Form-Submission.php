@@ -69,10 +69,15 @@
                     $successfulMessage= "Success full";
                    
                 }
+
+                else 
+                {
+                    $errorMessage="Failed";
+                }
                 
 
             }
-            function test_name($data)
+            function test_data($data)
             {
                 $data=trim($data);
                 $data=stripcslashes($data);
@@ -150,11 +155,12 @@
                 <input type="text" id="username" name="username" ><span style="color : red;"><?php echo $userNameErr; ?></span>
                 <br><br>
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" pattern=".{4,}" ><span style="color : red;"><?php echo $passwordErr; ?></span>
+                <input type="password" id="password" name="password" placeholder="at least 4 character" pattern=".{4,}" ><span style="color : red;"><?php echo $passwordErr; ?></span>
                 <br><br>
                 <input type="submit" value="submit">
                 <br><br>
                 <span style =" color : green;"><?php echo "<b>" .$successfulMessage  ."</b>"; ?></span>
+                <span style =" color : green;"><?php echo "<b>" .$errorMessage  ."</b>"; ?></span>
                 
             </fieldset>
 
